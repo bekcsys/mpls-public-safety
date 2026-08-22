@@ -1,0 +1,11 @@
+.git
+.venv
+.env
+.dagster
+.tmp_dagster_home_*
+__pycache__
+*.egg-info
+data/raw/*.parquet
+data/processed/*.parquet
+prompts
+README.md

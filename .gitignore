@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+data/raw/
+data/processed/
+.dagster/
+.tmp_dagster_home_*/
+tmp*/
+.DS_Store

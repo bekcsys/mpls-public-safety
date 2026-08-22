@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mpls-public-safety"
+version = "0.1.0"
+description = "Dagster pipeline for Minneapolis public-safety incidents"
+requires-python = ">=3.11"
+dependencies = [
+    "dagster>=1.9.0",
+    "dagster-webserver>=1.9.0",
+    "pandas>=2.2.0",
+    "pyarrow>=17.0.0",
+    "python-dotenv>=1.0.0",
+    "requests>=2.32.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["mpls_public_safety*"]
+
+[tool.dagster]
+module_name = "mpls_public_safety.definitions"
