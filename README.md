@@ -1,7 +1,7 @@
 # mpls-public-safety
 
 ![alt text](image.png)
-![alt text](image-1.png)
+![alt text](image-2.png)
 
 Dagster pipeline that pulls Minneapolis police incidents from the official Open Data API, cleans them, and writes Parquet locally.
 

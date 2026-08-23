@@ -1,3 +1,4 @@
+import json
 import os
 from datetime import datetime, timezone
 from pathlib import Path
@@ -168,9 +169,15 @@ def neighborhood_case_counts(
 def neighborhood_case_bubbles(
     context: AssetExecutionContext, neighborhood_case_counts: pd.DataFrame
 ) -> str:
-    figure = plot_neighborhood_case_bubbles(neighborhood_case_counts)
+    geojson_path = _data_path("raw", "neighborhoods.geojson")
+    neighborhoods = json.loads(geojson_path.read_text())
+    figure = plot_neighborhood_case_bubbles(neighborhood_case_counts, neighborhoods)
     output_path = _data_path("processed", "neighborhood_bubbles.html")
-    figure.write_html(output_path, include_plotlyjs="cdn")
+    figure.write_html(
+        output_path,
+        include_plotlyjs="cdn",
+        config={"scrollZoom": True, "displaylogo": False},
+    )
     context.add_output_metadata(
         {
             "num_neighborhoods": len(neighborhood_case_counts),
