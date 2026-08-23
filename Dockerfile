@@ -11,6 +11,7 @@ RUN mkdir -p /app/.dagster_home /app/data/raw /app/data/processed
 
 COPY pyproject.toml ./
 COPY mpls_public_safety ./mpls_public_safety
+COPY viz ./viz
 
 RUN pip install --no-cache-dir -e .
 

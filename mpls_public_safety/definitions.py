@@ -12,7 +12,15 @@ load_dotenv(Path(__file__).resolve().parents[1] / ".env")
 
 incident_job = define_asset_job(
     name="incident_ingestion",
-    selection=["raw_incidents", "processed_incidents"],
+    selection=[
+        "raw_incidents",
+        "processed_incidents",
+        "raw_communities",
+        "raw_metro_places",
+        "enriched_incidents",
+        "neighborhood_case_counts",
+        "neighborhood_case_bubbles",
+    ],
 )
 
 incident_schedule = ScheduleDefinition(

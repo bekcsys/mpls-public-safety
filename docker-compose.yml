@@ -10,6 +10,7 @@ services:
       DATA_DIR: /app/data
     volumes:
       - ./mpls_public_safety:/app/mpls_public_safety
+      - ./viz:/app/viz
       - ./data:/app/data
       - dagster_home:/app/.dagster_home
     healthcheck:
